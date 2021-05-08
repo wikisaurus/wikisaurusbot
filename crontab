@@ -1,26 +1,19 @@
 # m h  dom mon dow   command
 
 # every 5 minutes
-*/5 *  * * * jsub -N sandbox          -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/sandbox.py
+*/5  * * * * jsub -N sandbox          -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/sandbox.py
+
 # hourly
-0 *    * * * jsub -N autopurge-hourly -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/autopurge.py --hourly --nolog
-0 *    * * * jsub -N fastrfaa         -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/fastrfaa.py $HOME/data/fastrfaa.txt
-0 *    * * * jsub -N techtasks        -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/techtasks.py
-# several times a day
-30 */6 * * * jsub -N autodumpscan     -quiet -o /$HOME/logs -e /dev/null -mem 2G python3 $HOME/scripts/autodumpscan.py
+0 *    * * * jsub -N autopurge-hourly -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/autopurge.py --hourly --nolog
+0 *    * * * jsub -N techtasks        -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/techtasks.py
+0 0    * * * jsub -N validation-stats -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
+
 # daily
-0 0    * * * jsub -N autopurge-daily  -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/autopurge.py --daily --null --nolog
-0 0    * * * jsub -N validation-stats -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/validstats.py $HOME/data/validation.tsv
-0 0    * * * jsub -N tow-update       -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/tow.py
-0 0    * * * jsub -N actual-afd       -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/actual_afd.py
-0 0    * * * jsub -N userscript-stats -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/userscripts.py
-0 1    * * * jsub -N checkwiki        -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/cwtrigger.py $HOME/scripts/markers $HOME/data/checkwiki.txt
+0 0    * * * jsub -N autopurge-daily  -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/autopurge.py --daily --null --nolog
+0 0    * * * jsub -N tow-update       -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/tow.py
+0 0    * * * jsub -N actual-afd       -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/actual_afd.py
+0 0    * * * jsub -N userscript-stats -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/userscripts.py
+
 # weekly
-0 12   * * 0 jsub -N validation-plots -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/validplots.py $HOME/data/validation.tsv $HOME/data/
-0 12   * * 0 jsub -N oldrev-redirects -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/oldrevredirs.py
-0 0    * * 5 jsub -N sort-unrev-files -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/sort_unrev_files.py
-0 0    * * 6 jsub -N afi              -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/afi.py
-# monthly
-0 0    1 * * jsub -N wikidatarefs     -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/wikidatarefs.py
-0 0    2 * * jsub -N dublicate-params -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/paramfix.py
-30 0   4 * * jsub -N fastrfaa-stats   -quiet -o /dev/null -e /dev/null python3 $HOME/scripts/fastrfaa_stats.py $HOME/data/fastrfaa.txt
+0 0    * * 6 jsub -N afi              -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/afi.py
+0 12   * * 0 jsub -N validation-plots -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/validplots.py $HOME/data/validation.tsv
