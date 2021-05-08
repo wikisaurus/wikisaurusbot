@@ -12,8 +12,8 @@ import pywikibot
 CATEGORY_NAME = "Категория:Википедия:Статьи для срочного улучшения"
 TEMPLATE_NAME = "Шаблон:Случайные статьи с КУЛ"
 
-TEXT_BEFORE = "{{fmbox|text=<center>Статьи для доработки: "
-TEXT_AFTER = ".</center>}}"
+TEXT_BEFORE = "{{fmbox|text=Статьи для доработки: "
+TEXT_AFTER = ".|textstyle=text-align: center;}}"
 
 LIST_LEN = 5
 

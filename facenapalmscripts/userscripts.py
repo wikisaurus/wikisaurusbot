@@ -1,6 +1,6 @@
 """
 This script collects statistics about userscripts usage in Russian Wikipedia and
-publishes it at [[Участник:NapalmBot/Самые используемые скрипты]]. Script can
+publishes it at [[Википедия:Самые используемые скрипты/Данные]]. Script can
 detect only importScript functions and do not count cross-wiki script imports.
 """
 import re
@@ -45,7 +45,7 @@ def process_page(page):
 def get_stats(site):
     """Get an { script : count } dictionary."""
     result = []
-    for page in site.search("insource:\"importScript\"", [2], content=True):
+    for page in site.search("insource:\"importScript\"", namespaces=[2], content=True):
         result += process_page(page)
     return dict(Counter(result))
 
@@ -63,7 +63,7 @@ def main():
         result += formatstr.format(num=num + 1, page=page, count=count)
     result += "|}\n\n"
 
-    page = pywikibot.Page(site, "Участник:NapalmBot/Самые используемые скрипты")
+    page = pywikibot.Page(site, "Википедия:Самые используемые скрипты/Данные")
     page.text = result
     page.save("Обновление данных.", minor=False)
 

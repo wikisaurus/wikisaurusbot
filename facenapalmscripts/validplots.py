@@ -130,7 +130,7 @@ def main():
     _plot_pair("перенаправлений",
                "validation redirects unrev.png", data[9], "#14866D",
                "validation redirects old.png", data[10], "#00AF89")
-    _backup_data("User:NapalmBot/validation.tsv")
+    _backup_data("User:WikisaurusBot/validation.tsv")
 
 if __name__ == "__main__":
     main()
