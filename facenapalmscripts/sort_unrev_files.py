@@ -295,7 +295,6 @@ def sort_info(info, metapage, site=DEFAULT_SITE):
 
     lines.append("…по расширению:")
     # lines.append(_select_from_ext("jpg-изображения", ["jpg", "jpeg"]))
-    # lines.append("* <s>[[Участник:NapalmBot/файлы/jpg-изображения|jpg-изображения]]</s> (не обновляется)")
     lines.append(_select_from_ext("png-изображения", ["png"]))
     lines.append(_select_from_ext("gif-изображения", ["gif"]))
     lines.append(_select_from_ext("svg-изображения", ["svg"]))
