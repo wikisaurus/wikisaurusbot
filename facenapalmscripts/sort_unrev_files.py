@@ -1,6 +1,6 @@
 """
 This script is used for collection and analysis of list of unreviewed files in ruwiki.
-This is the maintainer script for [[:ru:User:NapalmBot/файлы]] pages.
+This is the maintainer script for [[:ru:User:Wikisaurusbot/файлы]] pages.
 Usage:
     python sort_unrev_files.py
 """
@@ -295,7 +295,7 @@ def sort_info(info, metapage, site=DEFAULT_SITE):
 
     lines.append("…по расширению:")
     # lines.append(_select_from_ext("jpg-изображения", ["jpg", "jpeg"]))
-    lines.append("* <s>[[Участник:NapalmBot/файлы/jpg-изображения|jpg-изображения]]</s> (не обновляется)")
+    # lines.append("* <s>[[Участник:NapalmBot/файлы/jpg-изображения|jpg-изображения]]</s> (не обновляется)")
     lines.append(_select_from_ext("png-изображения", ["png"]))
     lines.append(_select_from_ext("gif-изображения", ["gif"]))
     lines.append(_select_from_ext("svg-изображения", ["svg"]))
@@ -313,11 +313,6 @@ def sort_info(info, metapage, site=DEFAULT_SITE):
     lines.append(_select_from_cats("добротные статьи", ["Категория:Википедия:Добротные статьи по алфавиту"]))
     lines.append(_select_from_cats("избранные списки", ["Категория:Википедия:Избранные списки по алфавиту"]))
 
-    lines.append("…составленные по личной просьбе:")
-    lines.append("* [[Участник:NapalmBot/файлы/Ле Лою|Ле Лоя]] (автоматически не обновляется)")
-    lines.append("* [[Участник:NapalmBot/файлы/Deltahead|Deltahead]] (автоматически не обновляется)")
-
-    lines.append("Если вы не нашли в списке интересующую вас тематику — [[ОУ:Facenapalm|напишите ботоводу]].")
     lines.append("")
     lines.append("[[Категория:Википедия:Списки неотпатрулированных файлов| ]]")
 
@@ -329,7 +324,7 @@ def sort_info(info, metapage, site=DEFAULT_SITE):
 def main():
     """Main script function."""
     info = collect_info()
-    sort_info(info, "Участник:NapalmBot/файлы")
+    sort_info(info, "Участник:Wikisaurusbot/файлы")
 
 if __name__ == "__main__":
     main()
