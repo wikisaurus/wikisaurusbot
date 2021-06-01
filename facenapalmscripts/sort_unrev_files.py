@@ -1,6 +1,6 @@
 """
 This script is used for collection and analysis of list of unreviewed files in ruwiki.
-This is the maintainer script for [[:ru:User:Wikisaurusbot/файлы]] pages.
+This is the maintainer script for [[:ru:User:WikisaurusBot/файлы]] pages.
 Usage:
     python sort_unrev_files.py
 """
@@ -323,7 +323,7 @@ def sort_info(info, metapage, site=DEFAULT_SITE):
 def main():
     """Main script function."""
     info = collect_info()
-    sort_info(info, "Участник:Wikisaurusbot/файлы")
+    sort_info(info, "Участник:WikisaurusBot/файлы")
 
 if __name__ == "__main__":
     main()
