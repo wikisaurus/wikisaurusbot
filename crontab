@@ -3,7 +3,7 @@
 # every 5 minutes
 */5  * * * * jsub -N sandbox          -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/sandbox.py
 
-# hourly
+# every hour
 0 *    * * * jsub -N autopurge-hourly -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/autopurge.py --hourly --nolog
 0 *    * * * jsub -N techtasks        -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/techtasks.py
 0 0    * * * jsub -N validation-stats -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
