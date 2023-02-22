@@ -22,6 +22,7 @@ COMMENT = "Обновление списка статей."
 def main():
     """Main script function."""
     site = pywikibot.Site()
+    site.login()
 
     category = pywikibot.Category(site, CATEGORY_NAME)
     pages = list(category.articles())

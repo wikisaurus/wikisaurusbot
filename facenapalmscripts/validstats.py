@@ -62,6 +62,7 @@ def main():
     """Main script function."""
     if len(sys.argv) == 1:
         return
+    DEFAULT_SITE.login()
 
     stats = []
     stats.append(datetime.strftime(datetime.utcnow(), "%Y-%m-%d"))

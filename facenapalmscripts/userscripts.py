@@ -52,6 +52,7 @@ def get_stats(site):
 def main():
     """Main script function."""
     site = pywikibot.Site()
+    site.login()
     stats = get_stats(site)
 
     result = "Последнее обновление: {{subst:#time:j xg Y, H:i}}\n\n"

@@ -6,9 +6,9 @@
 # every hour
 0 *    * * * jsub -N autopurge-hourly -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/autopurge.py --hourly --nolog
 0 *    * * * jsub -N techtasks        -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/techtasks.py
-0 0    * * * jsub -N validation-stats -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
 
 # daily
+0 0    * * * jsub -N validation-stats -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
 0 0    * * * jsub -N autopurge-daily  -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/autopurge.py --daily --null --nolog
 0 0    * * * jsub -N tow-update       -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/tow.py
 0 0    * * * jsub -N actual-afd       -quiet -o /dev/null -e /dev/null python3 $HOME/facenapalmscripts/actual_afd.py
