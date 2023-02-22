@@ -82,7 +82,7 @@ def main():
 
         def _line_plot(data, color, label):
             """Iternal function for making one plot line."""
-            plt.plot(axis, data, linewidth=3, color=color, label=label)
+            plt.plot(axis, [int(i) for i in data], linewidth=3, color=color, label=label)
 
         def _final_plot(filename):
             """Iternal function for plot saving and uploading."""
