@@ -4,6 +4,7 @@ everything is ok.
 """
 import pywikibot
 site = pywikibot.Site()
+site.login()
 page = pywikibot.Page(site, "Википедия:Песочница")
 page.text = page.text + "\n\nHello, world!"
 page.save("WMFlabs test.")

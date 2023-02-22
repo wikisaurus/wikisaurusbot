@@ -62,6 +62,7 @@ def main():
 
     if not LOCAL:
         site = pywikibot.Site()
+        site.login()
 
     def _plot_pair(title, ufilename, udata, ucolor, ofilename, odata, ocolor):
         """
