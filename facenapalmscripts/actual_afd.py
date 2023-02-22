@@ -7,6 +7,7 @@ TEXT = """#REDIRECT [[Википедия:К удалению/{{subst:#time:j xg 
 def main():
     """Main script function."""
     site = pywikibot.Site()
+    site.login()
     page = pywikibot.Page(site, "Википедия:КУП")
     page.text = TEXT
     page.save("Обновление даты.")
