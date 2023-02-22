@@ -74,6 +74,7 @@ def collect_info(site=DEFAULT_SITE):
         "pages": pages where category is used
         "categories": categories of those pages
     """
+    site.login()
     result = []
 
     # get filename and pages from api request
@@ -148,7 +149,6 @@ def collect_info(site=DEFAULT_SITE):
 
 def sort_info(info, metapage, site=DEFAULT_SITE):
     """Sort files and create subpages of metapage with corresponding information."""
-
     metaline = "* [[{metapage}/{{page}}|{{page}}]] ({{num}} страниц)".format(metapage=metapage)
     emptylist = "<noinclude>Всё отпатрулировано. Отличная работа!</noinclude>"
     listcat = "\n<noinclude>[[Категория:Википедия:Списки неотпатрулированных файлов|{page}]]</noinclude>"
