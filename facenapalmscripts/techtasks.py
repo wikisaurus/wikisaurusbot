@@ -168,6 +168,7 @@ def update_techtasks(pagename, beginning, line_format, ending, clear=False,
                      reverse_sort=True):
     """Update list of technical tasks."""
     site = pywikibot.Site()
+    site.login()
     pages = list(pywikibot.Category(site, CATEGORY_NAME).members())
     count = len(pages)
 

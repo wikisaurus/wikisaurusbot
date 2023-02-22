@@ -80,6 +80,7 @@ def archive(site, local, original):
 def main():
     """Main script function."""
     site = pywikibot.Site()
+    site.login()
     (interwiki, lang, name) = parse_meta_template()
     local = get_sitelink(site, lang, name)
     if local:

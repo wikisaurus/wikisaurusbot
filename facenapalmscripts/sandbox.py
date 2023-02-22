@@ -22,6 +22,7 @@ SANDBOXES = [
 def main():
     """Main script function."""
     site = pywikibot.Site()
+    site.login()
     time = pywikibot.Timestamp.utcnow()
     for (title, text, delay) in SANDBOXES:
         page = pywikibot.Page(site, title)
