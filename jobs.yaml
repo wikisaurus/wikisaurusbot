@@ -1,0 +1,6 @@
+#every 5 minutes
+- name: sandbox
+  command: python3 $HOME/facenapalmscripts/sandbox.py
+  image: tf-mono68
+  schedule: "*/5  * * * *"
+  emails: onfailure
