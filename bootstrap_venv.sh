@@ -18,6 +18,7 @@ pip install -U pip wheel
 # Change the following section depending on what your tool needs!
 
 # install some concrete packages
+pip install pywikibot
 # pip install requests
 # pip install pyyaml
 
