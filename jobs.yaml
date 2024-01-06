@@ -17,3 +17,53 @@
   image: python3.11
   schedule: "0 *    * * *"
   emails: onfailure
+
+# every day
+- name: validation-stats
+  command: python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
+  image: python3.11
+  schedule: "0 0    * * *"
+  emails: onfailure
+
+- name: autopurge-daily
+  command: python3 $HOME/facenapalmscripts/autopurge.py --daily --null --nolog
+  image: python3.11
+  schedule: "0 0    * * *"
+  emails: onfailure
+
+- name: tow-update
+  command: python3 $HOME/facenapalmscripts/tow.py
+  image: python3.11
+  schedule: "0 0    * * *"
+  emails: onfailure
+
+- name: actual-afd
+  command: python3 $HOME/facenapalmscripts/actual_afd.py
+  image: python3.11
+  schedule: "0 0    * * *"
+  emails: onfailure
+
+- name: userscript-stats
+  command: python3 $HOME/facenapalmscripts/userscripts.py
+  image: python3.11
+  schedule: "0 0    * * *"
+  emails: onfailure
+
+# weekly
+- name: afi
+  command: python3 $HOME/facenapalmscripts/afi.py
+  image: python3.11
+  schedule: "0 0    * * 6"
+  emails: onfailure
+
+- name: validation-plots
+  command: python3 $HOME/facenapalmscripts/validplots.py $HOME/data/validation.tsv
+  image: python3.11
+  schedule: "0 12   * * 0"
+  emails: onfailure
+
+- name: sort-unrev-files
+  command: python3 $HOME/facenapalmscripts/sort_unrev_files.py
+  image: python3.11
+  schedule: "0 0    * * 5"
+  emails: onfailure
