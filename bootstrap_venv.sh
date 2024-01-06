@@ -19,7 +19,7 @@ pip install -U pip wheel
 
 # install some concrete packages
 pip install pywikibot
-# pip install requests
+pip install requests
 # pip install pyyaml
 
 # or, install all packages from src/requirements.txt
