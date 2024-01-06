@@ -1,6 +1,19 @@
 #every 5 minutes
 - name: sandbox
   command: python3 $HOME/facenapalmscripts/sandbox.py
-  image: tf-mono68
+  image: python3.11
   schedule: "*/5  * * * *"
+  emails: onfailure
+
+# every hour
+- name: autopurge-hourly
+  command: python3 $HOME/facenapalmscripts/autopurge.py --hourly --nolog
+  image: python3.11
+  schedule: "0 *    * * *"
+  emails: onfailure
+
+- name: techtasks
+  command: python3 $HOME/facenapalmscripts/techtasks.py
+  image: python3.11
+  schedule: "0 *    * * *"
   emails: onfailure
