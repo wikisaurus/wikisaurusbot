@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Tiny test script which tries to edit sandbox in ruwiki to make sure that
 everything is ok.

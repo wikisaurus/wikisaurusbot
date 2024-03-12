@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Update ruwiki's [[ВП:КУП]] shortcut to the actual 'Articles for deletion' page."""
 
 import pywikibot

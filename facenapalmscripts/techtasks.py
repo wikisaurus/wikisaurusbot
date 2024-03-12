@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Script updates list of technical tasks in russian Wikipedia.
 

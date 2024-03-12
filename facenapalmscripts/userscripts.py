@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script collects statistics about userscripts usage in Russian Wikipedia and
 publishes it at [[Википедия:Самые используемые скрипты/Данные]]. Script can

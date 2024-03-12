@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script is used for collection and analysis of list of unreviewed files in ruwiki.
 This is the maintainer script for [[:ru:User:WikisaurusBot/файлы]] pages.

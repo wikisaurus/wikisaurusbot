@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Script updates article list in ruwiki's {{Случайные статьи с КУЛ}} template.
 

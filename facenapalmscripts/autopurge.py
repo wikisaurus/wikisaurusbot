@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Maintainer script for ruwiki's {{очищать кэш}} aka {{autopurge}} template.
 

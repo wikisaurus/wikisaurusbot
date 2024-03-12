@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script creates validation plots based on statistics collected by
 validstats.py module.

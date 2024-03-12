@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script collects ruwiki's validation statistics for further plotting.
 Statfile structure: first line - any comment (will be ignored), other lines -

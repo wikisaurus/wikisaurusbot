@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Script updates russian {{Перевод недели}} template according to Translate of
 the Week project.
