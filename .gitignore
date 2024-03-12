@@ -8,7 +8,4 @@ __pycache__
 apicache
 apicache-py3
 data
-jsub
 logs
-replica.my.cnf
-user-config.py

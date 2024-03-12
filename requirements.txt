@@ -2,3 +2,4 @@ pywikibot
 mwparserfromhell
 matplotlib
 requests
+requests_oauthlib

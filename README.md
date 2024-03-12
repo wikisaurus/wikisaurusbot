@@ -42,5 +42,19 @@ need to have filelogs enabled, you have to add the options `filelogs: true` and
 `mount: all` to the `jobs.yaml` entry for that job.
 
 
+## Authentication
+To authenticate, you have to setup the environment variables:
+```
+PWB_CONSUMER_TOKEN
+PWB_CONSUMER_SECRET
+PWB_ACCESS_TOKEN
+PWB_ACCESS_SECRET
+PWB_USERNAME
+```
+
+to match the oauth credentials (see https://wikitech.wikimedia.org/wiki/Help:Toolforge/Running_Pywikibot_scripts#Setup).
+
+
+
 More information on the toolforge build service here:
 https://wikitech.wikimedia.org/wiki/Help:Toolforge/Build_Service

@@ -8,6 +8,13 @@ Usage:
 
 import re
 import random
+import os
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 
 CATEGORY_NAME = "Категория:Википедия:Статьи для срочного улучшения"
