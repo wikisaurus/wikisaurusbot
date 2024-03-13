@@ -35,7 +35,7 @@ def main():
     time = pywikibot.Timestamp.utcnow()
     for (title, text, delay) in SANDBOXES:
         page = pywikibot.Page(site, title)
-        delta = time - page.latest_revision.timestamp()
+        delta = time - page.latest_revision.timestamp
         if "--noclear" not in sys.argv and delta.total_seconds() >= 60 * delay:
             # clear sandbox
             page.text = text
