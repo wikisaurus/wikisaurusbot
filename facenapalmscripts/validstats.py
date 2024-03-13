@@ -90,7 +90,7 @@ def main():
     with open(sys.argv[1], "a") as statfile:
         statfile.write("\t".join(stats))
         statfile.write("\n")
-        e
+
 
 if __name__ == "__main__":
     main()

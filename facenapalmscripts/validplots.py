@@ -12,6 +12,7 @@ Usage:
 outdir is used for temporary file storing.
 """
 
+import os
 import sys
 from pathlib import Path
 import pywikibot
