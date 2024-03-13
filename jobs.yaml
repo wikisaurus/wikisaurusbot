@@ -1,69 +1,71 @@
 #every 5 minutes
 - name: sandbox
-  command: python3 $HOME/facenapalmscripts/sandbox.py
-  image: python3.11
+  command: sandbox
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "*/5  * * * *"
   emails: onfailure
 
 # every hour
 - name: autopurge-hourly
-  command: python3 $HOME/facenapalmscripts/autopurge.py --hourly --nolog
-  image: python3.11
+  command: autopurge-hourly
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
   emails: onfailure
 
 - name: techtasks
-  command: python3 $HOME/facenapalmscripts/techtasks.py
-  image: python3.11
+  command: techtasks
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
   emails: onfailure
 
 # every day
 - name: validation-stats
-  command: python3 $HOME/facenapalmscripts/validstats.py $HOME/data/validation.tsv
-  image: python3.11
+  command: validation-stats
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
+  mount: all
 
 - name: autopurge-daily
-  command: python3 $HOME/facenapalmscripts/autopurge.py --daily --null --nolog
-  image: python3.11
+  command: autopurge-daily
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
 
 - name: tow-update
-  command: python3 $HOME/facenapalmscripts/tow.py
-  image: python3.11
+  command: tow-update
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
 
 - name: actual-afd
-  command: python3 $HOME/facenapalmscripts/actual_afd.py
-  image: python3.11
+  command: actual-afd
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
 
 - name: userscript-stats
-  command: python3 $HOME/facenapalmscripts/userscripts.py
-  image: python3.11
+  command: userscript-stats
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
 
 # weekly
 - name: afi
-  command: python3 $HOME/facenapalmscripts/afi.py
-  image: python3.11
+  command: afi
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 6"
   emails: onfailure
 
 - name: validation-plots
-  command: python3 $HOME/facenapalmscripts/validplots.py $HOME/data/validation.tsv
-  image: python3.11
+  command: validation-plots
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 12   * * 0"
   emails: onfailure
+  mount: all
 
 - name: sort-unrev-files
-  command: python3 $HOME/facenapalmscripts/sort_unrev_files.py
-  image: python3.11
+  command: sort-unrev-files
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 5"
   emails: onfailure

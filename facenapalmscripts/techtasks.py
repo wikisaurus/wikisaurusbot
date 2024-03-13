@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Script updates list of technical tasks in russian Wikipedia.
 
@@ -6,6 +7,12 @@ Usage:
 """
 
 import re
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 import mwparserfromhell
 
@@ -89,7 +96,7 @@ def deignore(text, ignored):
         return ignored[index]
 
     return re.sub(LABEL_PREFIX + r"(\d+)" + LABEL_SUFFIX, _deignore_line, text)
-    
+
 def find_heading(code, node):
     """Find first second-level heading before the mwparserfromhell node."""
     index = code.index(node, recursive=True)

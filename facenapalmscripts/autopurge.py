@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Maintainer script for ruwiki's {{очищать кэш}} aka {{autopurge}} template.
 
@@ -9,6 +10,13 @@ correctly set via crontab.
 """
 
 import sys
+import os
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 import pywikibot.exceptions
 

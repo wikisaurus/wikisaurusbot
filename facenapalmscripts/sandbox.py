@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 Sandbox cleaner for Russian Wikipedia.
 
@@ -9,6 +10,12 @@ clear sandboxes.
 """
 
 import sys
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 
 SANDBOXES = [
@@ -38,4 +45,4 @@ def main():
 
 if __name__ == "__main__":
     main()
- 
+

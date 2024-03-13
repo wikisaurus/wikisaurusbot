@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script collects statistics about userscripts usage in Russian Wikipedia and
 publishes it at [[Википедия:Самые используемые скрипты/Данные]]. Script can
@@ -5,6 +6,12 @@ detect only importScript functions and do not count cross-wiki script imports.
 """
 import re
 from collections import Counter
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 
 def ucfirst(string):

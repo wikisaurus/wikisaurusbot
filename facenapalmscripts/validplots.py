@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script creates validation plots based on statistics collected by
 validstats.py module.
@@ -13,6 +14,12 @@ outdir is used for temporary file storing.
 
 import sys
 import os
+from pathlib import Path
+
+# set the path to the user-config.py file before importing pywikibot
+curdir = Path(__file__).parent.parent.absolute()
+os.environ["PYWIKIBOT_DIR"] = str(curdir)
+
 import pywikibot
 import matplotlib
 matplotlib.use('AGG')
