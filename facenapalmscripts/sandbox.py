@@ -11,13 +11,14 @@ clear sandboxes.
 
 import sys
 from pathlib import Path
-import os
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
 
 import pywikibot
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
+
 
 SANDBOXES = [
     ("Википедия:Песочница", "{{тестируйте ниже}}\n", 15),
@@ -46,4 +47,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

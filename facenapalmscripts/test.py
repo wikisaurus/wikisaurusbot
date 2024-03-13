@@ -4,13 +4,12 @@ Tiny test script which tries to edit sandbox in ruwiki to make sure that
 everything is ok.
 """
 from pathlib import Path
-import os
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
 site = pywikibot.Site()
 site.login()

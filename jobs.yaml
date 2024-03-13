@@ -4,6 +4,8 @@
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "*/5  * * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 # every hour
 - name: autopurge-hourly
@@ -11,12 +13,16 @@
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 - name: techtasks
   command: techtasks
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 # every day
 - name: validation-stats
@@ -25,30 +31,39 @@
   schedule: "0 0    * * *"
   emails: onfailure
   mount: all
+  filelog: true
 
 - name: autopurge-daily
   command: autopurge-daily
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 - name: tow-update
   command: tow-update
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 - name: actual-afd
   command: actual-afd
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 - name: userscript-stats
   command: userscript-stats
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
   emails: onfailure
+  mount: all
+  filelog: true
 
 # weekly
 - name: afi
@@ -56,6 +71,8 @@
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 6"
   emails: onfailure
+  mount: all
+  filelog: true
 
 - name: validation-plots
   command: validation-plots
@@ -63,9 +80,12 @@
   schedule: "0 12   * * 0"
   emails: onfailure
   mount: all
+  filelog: true
 
 - name: sort-unrev-files
   command: sort-unrev-files
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 5"
   emails: onfailure
+  mount: all
+  filelog: true

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """Update ruwiki's [[ВП:КУП]] shortcut to the actual 'Articles for deletion' page."""
-import os
+import pywikibot
 from pathlib import Path
 
-# set the path to the user-config.py file before importing pywikibot
+# manually load the auth
 curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
-import pywikibot
 
 TEXT = """#REDIRECT [[Википедия:К удалению/{{subst:#time:j xg Y}}]]"""
 

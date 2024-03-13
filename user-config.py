@@ -3,6 +3,9 @@
 
 import os
 
+family = "wikipedia"
+mylang = "ru"
+
 usernames['wikipedia']['*'] = \
   usernames['meta']['*'] = \
   usernames['commons']['*'] = \
