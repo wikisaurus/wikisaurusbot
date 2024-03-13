@@ -5,6 +5,7 @@ publishes it at [[Википедия:Самые используемые скр�
 detect only importScript functions and do not count cross-wiki script imports.
 """
 import re
+import os
 from collections import Counter
 from pathlib import Path
 

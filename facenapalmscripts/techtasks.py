@@ -7,6 +7,7 @@ Usage:
 """
 
 import re
+import os
 from pathlib import Path
 
 # set the path to the user-config.py file before importing pywikibot

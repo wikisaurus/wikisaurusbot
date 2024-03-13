@@ -11,6 +11,7 @@ clear sandboxes.
 
 import sys
 from pathlib import Path
+import os
 
 # set the path to the user-config.py file before importing pywikibot
 curdir = Path(__file__).parent.parent.absolute()
