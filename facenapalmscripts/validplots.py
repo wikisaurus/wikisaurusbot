@@ -13,18 +13,17 @@ outdir is used for temporary file storing.
 """
 
 import sys
-import os
 from pathlib import Path
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
 import matplotlib
 matplotlib.use('AGG')
 import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
 FILEDESC = """
 == Краткое описание ==

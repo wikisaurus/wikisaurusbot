@@ -10,17 +10,18 @@ Usage:
 """
 
 import sys
-import os
 from pathlib import Path
 from datetime import datetime
-
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
 from pywikibot.data.api import Request
+
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
+
+
 DEFAULT_SITE = pywikibot.Site()
 
 def get_urlist(site=DEFAULT_SITE, namespace="0|6|10|14|100|828", redirects="nonredirects"):

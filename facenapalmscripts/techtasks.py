@@ -7,15 +7,14 @@ Usage:
 """
 
 import re
-import os
 from pathlib import Path
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
 import mwparserfromhell
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
 CATEGORY_NAME = "Категория:Википедия:Обсуждения с нерешёнными техническими задачами"
 TEMPLATE_NAME = "техзадача"

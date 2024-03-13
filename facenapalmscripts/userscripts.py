@@ -5,15 +5,14 @@ publishes it at [[Википедия:Самые используемые скр�
 detect only importScript functions and do not count cross-wiki script imports.
 """
 import re
-import os
 from collections import Counter
 from pathlib import Path
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
 def ucfirst(string):
     """Return string with first letter in upper case."""

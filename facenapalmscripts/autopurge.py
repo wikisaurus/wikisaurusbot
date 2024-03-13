@@ -10,15 +10,14 @@ correctly set via crontab.
 """
 
 import sys
-import os
 from pathlib import Path
-
-# set the path to the user-config.py file before importing pywikibot
-curdir = Path(__file__).parent.parent.absolute()
-os.environ["PYWIKIBOT_DIR"] = str(curdir)
-
 import pywikibot
 import pywikibot.exceptions
+
+# manually load the auth
+curdir = Path(__file__).parent.parent.absolute()
+userfile = curdir / "user-config.py"
+exec(compile(userfile.read_text(), str(userfile), 'exec'), vars(pywikibot.config))
 
 def process_purge(site, catname, limit=500):
     """Purge all pages from category and return status for logging."""
