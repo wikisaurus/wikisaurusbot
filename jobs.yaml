@@ -57,14 +57,6 @@
   mount: all
   filelog: true
 
-- name: userscript-stats
-  command: userscript-stats
-  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
-  schedule: "0 0    * * *"
-  emails: onfailure
-  mount: all
-  filelog: true
-
 # weekly
 - name: afi
   command: afi
@@ -86,6 +78,15 @@
   command: sort-unrev-files
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 5"
+  emails: onfailure
+  mount: all
+  filelog: true
+
+#monthly
+  - name: userscript-stats
+  command: userscript-stats
+  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
+  schedule: "17 6 1 * *"
   emails: onfailure
   mount: all
   filelog: true
