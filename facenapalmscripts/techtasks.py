@@ -21,11 +21,7 @@ TEMPLATE_NAME = "техзадача"
 DONE_PARAM = "выполнено"
 SORT_PARAM = "дата"
 DEFAULT_SORTKEY = "0000-00-00"
-
 COMMENT = "Автоматическое обновление списка техзадач."
-
-LOG = True
-LOG_FORMAT = "Processed {done} out of {count} pages ({percentage} %)."
 
 IGNORE_FILTER = re.compile(r"""(
     <!--.*?-->|
@@ -161,16 +157,6 @@ def delete_markup(text, site=None, encoder=None):
     text = text.strip()
     return text
 
-def log(done, count):
-    """Write information about progress."""
-    if not LOG:
-        return
-    if count == 0:
-        percentage = 100
-    else:
-        percentage = round(100 * done / count)
-    print(LOG_FORMAT.format(done=done, count=count, percentage=percentage))
-
 def update_techtasks(pagename, beginning, line_format, ending, clear=False,
                      reverse_sort=True):
     """Update list of technical tasks."""
@@ -181,7 +167,6 @@ def update_techtasks(pagename, beginning, line_format, ending, clear=False,
 
     templates = []
     for done, page in enumerate(pages):
-        log(done, count)
         text = page.text
         # mwparserfromhell always parses ''''' as <i><b>. So, this case:
         #   '''''something'' something else'''
@@ -216,7 +201,6 @@ def update_techtasks(pagename, beginning, line_format, ending, clear=False,
             line = line_format.format(params=params, link=link)
             templates.append((line, sortkey))
 
-    log(count, count)
     templates.sort(key=lambda template: template[1], reverse=reverse_sort)
 
     lines = []
