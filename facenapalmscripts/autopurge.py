@@ -62,13 +62,12 @@ def process_null(site):
     return "нулевых правок: " + str(len(members) - errors)
 
 KEYS = {"--hourly": process_hourly, "--daily": process_daily, "--null": process_null}
-DISABLE_LOG = "--nolog"
 
 def main():
     """Get console arguments and call corresponding fucntions."""
     logging.basicConfig(
         format="%(asctime)s %(levelname)-8s %(message)s",
-        level=logging.WARNING,
+        level=logging.ERROR,
     )
     if len(sys.argv) == 1:
         return
@@ -79,8 +78,6 @@ def main():
     for arg in args:
         if arg in KEYS:
             respond.append(KEYS[arg](site))
-    if DISABLE_LOG not in args:
-        log(site, respond)
 
 if __name__ == "__main__":
     main()
