@@ -3,7 +3,7 @@
   command: sandbox
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "*/5  * * * *"
-  emails: onfailure
+  emails: none
   mount: all
   filelog: true
 
@@ -12,7 +12,7 @@
   command: autopurge-hourly
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
-  emails: onfailure
+  emails: none
   mount: all
   filelog: true
 
@@ -20,7 +20,7 @@
   command: techtasks
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 *    * * *"
-  emails: onfailure
+  emails: none
   mount: all
   filelog: true
 
@@ -37,7 +37,7 @@
   command: autopurge-daily
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * *"
-  emails: onfailure
+  emails: none
   mount: all
   filelog: true
 
@@ -78,15 +78,6 @@
   command: sort-unrev-files
   image: tool-wikisaurusbot/tool-wikisaurusbot:latest
   schedule: "0 0    * * 5"
-  emails: onfailure
-  mount: all
-  filelog: true
-
-#monthly
-  - name: userscript-stats
-  command: userscript-stats
-  image: tool-wikisaurusbot/tool-wikisaurusbot:latest
-  schedule: "17 6 1 * *"
   emails: onfailure
   mount: all
   filelog: true
